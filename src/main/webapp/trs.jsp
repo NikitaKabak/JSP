@@ -11,12 +11,19 @@
 <head>
     <title>inf</title>
 </head>
+
 <body>
-<h20>body</h20>
-<c:out value="texxxxxxxxxt"/>
-<c:forEach var="mov" begin="0" end="3">
-    <c:out value="${mov}"/>
-</c:forEach>
-<Form action="greding" method="post">Введите имя<input name="name"><input type="submit"></Form>
+
+<c:out value="Сайт"/>
+
+<jsp:useBean id="count" class="methods.Counter"/>
+
+<h1>
+    Number of views: <jsp:getProperty name="count" property="count"/>
+
+</h1>
+
+<Form action="test" method="post">Введите имя<input name="name"><input type="submit"></Form>
+
 </body>
 </html>

@@ -8,18 +8,15 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-public class serv extends HttpServlet  {
-    private static int count = 0;
+public class serv extends HttpServlet {
 
-
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,IOException {
-        resp.setContentType("text/html;charset=uft-8");
-
-        PrintWriter out = resp.getWriter();
-        out.println("<html><head><title>FirstServlet</title></head>");
-        out.println("<body>" + "<Font color = red>" + "<h1>FirstServlet</h1>" + "</font>" + "</body>" + "</html>");
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/trs.jsp").forward(request, response);
     }
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,IOException{
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=uft-8");
         String name = req.getParameter("name");
         PrintWriter out = resp.getWriter();
@@ -27,4 +24,5 @@ public class serv extends HttpServlet  {
         out.println("<body><h1>FirstServlet</h1>" + name + "</body></html>");
 
     }
+
 }

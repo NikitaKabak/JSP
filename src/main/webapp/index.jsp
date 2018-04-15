@@ -1,5 +1,8 @@
-<html>
-<body>
-<h2>Hello World!</h2>
-</body>
-</html>
+<%--<html>--%>
+<%--<body>--%>
+<a href="/test">Servlet</a>
+<%--<script>
+    window.location="/test";
+</script>>--%>
+<%--</body>--%>
+<%--</html>--%>

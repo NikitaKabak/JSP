@@ -7,16 +7,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-  <display-name>Arch create web Aplication</display-name>
-  <welcome-file-list>
-    <welcome-file>trs.jsp</welcome-file>
-  </welcome-file-list>
+  <display-name>Servlet</display-name>
+  <!--<welcome-file-list>
+    <welcome-file>/test</welcome-file>
+  </welcome-file-list>-->
   <servlet>
   <servlet-name>serv</servlet-name>
 <servlet-class>serv</servlet-class>
         </servlet>
 <servlet-mapping>
 <servlet-name>serv</servlet-name>
-<url-pattern>/greding</url-pattern>
+<url-pattern>/test</url-pattern>
 </servlet-mapping>
         </web-app>
