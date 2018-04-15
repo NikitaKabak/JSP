@@ -14,16 +14,21 @@
 
 <body>
 
-<c:out value="Сайт"/>
+<c:out value="Авторизация"/><br><br>
 
 <jsp:useBean id="count" class="methods.Counter"/>
 
-<h1>
-    Number of views: <jsp:getProperty name="count" property="count"/>
 
-</h1>
+<Form action="test" method="post">Введите номер телефона  <input name="number"><br><br>
+    Введите имя  <input name="name"><br><br>
+    Введите e-mail  <input name="email"><br><br>
+    <input type="submit">
+</Form>
 
-<Form action="test" method="post">Введите имя<input name="name"><input type="submit"></Form>
+<h4>
+    Количество посещений: <jsp:getProperty name="count" property="count"/>
+
+</h4>
 
 </body>
 </html>
