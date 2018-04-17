@@ -18,24 +18,31 @@ public class serv extends HttpServlet {
     }
     private int i = 0;
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=UTF-8");
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
 
         ArrayList<String> ParamList = new ArrayList();
-        Enumeration param = req.getParameterNames();
+        Enumeration param = request.getParameterNames();
+
+        PrintWriter out = response.getWriter();
+        out.println("<html><head><title>Name</title></head>");
+        out.println("<body><h1>Данные</h1><br>");
 
         while (param.hasMoreElements()){
             ParamList.add((String)param.nextElement());
         }
 
-        PrintWriter out = resp.getWriter();
-        out.println("<html><head><title>Name</title></head>");
-        out.println("<body><h1>Данные</h1><br>");
-
         for(int i =  0; i < ParamList.size();i++){
+            if(request.getParameter(ParamList.get(i)) != ""){
+                String[] value = new String[ParamList.size()];
+                value[i] = request.getParameter(ParamList.get(i));
+                out.println(ParamList.get(i) + " = " + value[i] +"<br>");
+            } /*else {
+                request.getRequestDispatcher("/trs.jsp").forward(request, response);
+            }*/
 
-            String value = req.getParameter(ParamList.get(i));
-            out.println(ParamList.get(i) + " = " + value +"<br>");
+
+
         }
         out.println("</body></html>");
 
