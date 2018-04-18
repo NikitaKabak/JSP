@@ -1,3 +1,4 @@
+
 import javax.servlet.*;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -10,18 +11,17 @@ public class FilterForm implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        this.config = filterConfig;
+       /* this.config = filterConfig;
         String act = config.getInitParameter("active");
-        if (act != null) active = (act.toUpperCase().equals("TRUE"));
-
-
-
+        if (act != null) active = (act.toUpperCase().equals("TRUE"));*/
+        System.out.println("+++++");
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println(active);
-        if(active){
+        System.out.println("status doFilter" );
+        filterChain.doFilter( servletRequest, servletResponse);
+       /* if(active){
             ArrayList<String> ParamList = new ArrayList();
             Enumeration param = servletRequest.getParameterNames();
             while (param.hasMoreElements()){
@@ -39,7 +39,7 @@ public class FilterForm implements Filter {
                 }
 
             }
-        }
+        }*/
 
     }
 

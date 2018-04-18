@@ -25,7 +25,7 @@
     <input type="submit">
 </Form>
 
-<h4>
+<h4
     Количество посещений: <jsp:getProperty name="count" property="count"/>
 
 </h4>

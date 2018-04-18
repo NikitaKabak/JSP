@@ -4,11 +4,12 @@ public class Counter {
     private static int count = 0;
     public static String foot;
     public Counter(){
+
     }
 
     public int getCount() {
-        count++;
-        return count;
+      count++;
+        return count ;
     }
 
 }
