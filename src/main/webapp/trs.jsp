@@ -16,7 +16,7 @@
 
 <c:out value="Авторизация"/><br><br>
 
-<jsp:useBean id="count" class="methods.Counter"/>
+<jsp:useBean id="coun" class="methods.Counter"/>
 
 
 <Form action="test" method="post">Введите номер телефона  <input name="number"><br><br>
@@ -25,8 +25,8 @@
     <input type="submit">
 </Form>
 
-<h4
-    Количество посещений: <jsp:getProperty name="count" property="count"/>
+<h4>
+    Количество посещений: <jsp:getProperty name="coun" property="count"/>
 
 </h4>
 

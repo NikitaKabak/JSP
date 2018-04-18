@@ -14,7 +14,7 @@
     <servlet>
         <servlet-name>serv</servlet-name>
         <servlet-class>serv</servlet-class>
-        <load-on-startup>0</load-on-startup>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>serv</servlet-name>
