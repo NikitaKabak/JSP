@@ -6,7 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.*;
+import java.sql.Connection;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,8 +19,19 @@ public class serv extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.getRequestDispatcher("/trs.jsp").forward(request, response);
+        Connecter connect = new Connecter();
+        ResultSet result = null;
+        try {
+            result = connect.getResult("SELECT * from users");
+            while (result.next()){
+                System.out.println(result.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        connect.closeconnect();
     }
-    private int i = 0;
+
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
